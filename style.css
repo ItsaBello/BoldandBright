@@ -383,60 +383,26 @@ header.is-fading::after {
 }
 
 .studio-intro .intro-box,
-.contact-grid .contact-card
+.contact-grid .contact-card,
 .our-team-box .our-team-tiles,
-.faq .faq-box,
+.faq .faq-container,
 .nazorg .nazorg-box,
 .contact-form .contact-form-field {
     margin: 0 auto;
 }
 
+
 /* STUDIO INTRO */
 
 .studio-intro {
-    align-items: center;
+    align-items: flex-start;
     background-color: #2a2a2a;
-    /* background-color: rgba(102, 102, 102, 0.9); */
     display: flex;
     justify-content: center;
-    min-height: 420px;
     overflow: hidden;
-    padding: 24px;
+    padding-bottom: 50px;
+    padding-top: 50px;
     position: relative;
-}
-
-.studio-intro::before,
-.studio-intro::after {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: "";
-    height: 360px;
-    opacity: 0.8;
-    pointer-events: none;
-    position: absolute;
-    width: 360px;
-    z-index: 1;
-}
-
-/* DOWN RIGHT LEAF */
-.studio-intro::before {
-    background-image: url("images/leaf-left.png");
-    height: 330px;
-    right: 20px;
-    bottom: -30px;
-    transform: scaleX(-1) rotate(145deg);
-    width: 390px;
-}
-
-/* UPPER LEFT LEAF */
-.studio-intro::after {
-    background-image: url("images/leaf-right.png");
-    /* bottom: 0px; */
-    left: -80px;
-    top: 25px;
-    transform: /* scaleX(-1) */ rotate(80deg);
-    width: 420px;
 }
 
 .studio-intro .intro-box {
@@ -449,58 +415,44 @@ header.is-fading::after {
     color: white;
     max-width: 720px;
     overflow: hidden;
-    padding: 32px;
+    padding: 14px 32px 32px;
     position: relative;
     text-align: center;
     width: 100%;
     z-index: 2;
 }
 
-.studio-intro .intro-box::before,
-.studio-intro .intro-box::after {
+.studio-intro .intro-box::before {
+    background-image: url("images/Tijger BB.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     content: "";
-    opacity: 0.25;
+    height: 250px;
+    inset: 0;
+    opacity: 0.2;
     pointer-events: none;
     position: absolute;
+    top: 30px;
     z-index: 1;
-}
-
-/* UPPER RIGHT LEAF */
-.studio-intro .intro-box::before {
-    background-image: url("images/leaf-right.png");
-    height: 330px;
-    right: -50px;
-    top: -15px;
-    transform: scaleX(-1) rotate(65deg);
-    width: 330px;
-}
-
-/* DOWN LEFT LEAF */
-.studio-intro .intro-box::after {
-    background-image: url("images/leaf-left.png");
-    bottom: -135px;
-    left: -5px;
-    top: -30px;
-    transform: rotate(125deg);
-    width: 290px;
 }
 
 .studio-intro h1 {
     font-family: 'BebasNeue', sans-serif;
-    font-size: 50px;
+    font-size: 55px;
     font-weight: 700;
-    letter-spacing: 10px;
-    text-align: center;
+    letter-spacing: 5px;
+    position: relative;
     text-transform: uppercase;
+    z-index: 9;
 }
 
 .studio-intro p {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 500;
+    position: relative;
+    z-index: 9;
 }
 
 
@@ -842,6 +794,33 @@ header.is-fading::after {
     position: relative;
 }
 
+.faq::before, 
+.faq::after {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 1200px;
+    opacity: 0.9;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 280px;
+    z-index: 1;
+}
+
+.faq::before {
+    background-image: url("images/Dagger-Left-BB.png");
+    left: 40px;
+    transform: translateY(-50%);
+}
+
+.faq::after {
+    background-image: url("images/Dagger-Right-BB.png");
+    right: 40px;
+    transform: translateY(-50%);
+}
+
 .faq .faq-container {
     background: rgba(255, 148, 203, 0.9);
     border-radius: 14px;
@@ -947,42 +926,6 @@ header.is-fading::after {
     z-index: 1;
 }
 
-.faq-leaf-1 { 
-    background-image: url("../images/leaf-left.png");  
-    top: -40px;  
-    height: 400px; 
-    right: -80px; 
-    transform: scaleX(-1) rotate(325deg);
-    width: 400px; 
-}
-
-.faq-leaf-2 { 
-    background-image: url("../images/leaf-left.png");  
-    bottom: -30px; 
-    height: 400px; 
-    left: -40px; 
-    transform: rotate(118deg) scale(0.9); 
-    width: 400px; 
-}
-
-.faq-leaf-3 { 
-    background-image: url("../images/leaf-right.png"); 
-    height: 560px; 
-    left: -140px; 
-    top: -20px; 
-    transform: scaleX(-1) rotate(60deg); 
-    width: 560px; 
-}
-
-.faq-leaf-4 { 
-    background-image: url("../images/leaf-right.png"); 
-    bottom: -40px; 
-    height: 500px; 
-    right: -60px; 
-    transform: rotate(-125deg) scale(0.95); 
-    width: 500px; 
-}
-
 /* NAZORG PAGE */
 .nazorg {
     align-items: flex-start;
@@ -995,6 +938,21 @@ header.is-fading::after {
     position: relative;
 }
 
+.nazorg::before,
+.nazorg::after {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 700px;
+    opacity: 0.9;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 280px;
+    z-index: 1;
+}   
+
 .nazorg .nazorg-box {
     background: rgba(255, 148, 203, 0.9);
     border-radius: 14px;
@@ -1005,11 +963,57 @@ header.is-fading::after {
     color: white;
     max-width: 720px;
     overflow: hidden;
-    padding: 32px;
+    padding: 14px 32px 32px;
     position: relative;
-    text-align: center;
     width: 100%;
     z-index: 2;
+}
+
+.nazorg .nazorg-box::before {
+    background-image: url("images/nazorg\ foto.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 1400px;
+    inset: 0;
+    opacity: 0.3;
+    pointer-events: none;
+    position: absolute;
+    top: -200px;
+    z-index: 1;
+}
+
+.nazorg-box h1 {
+    font-family: 'BebasNeue', sans-serif;
+    font-size: 55px;
+    letter-spacing: 5px;
+    position: relative;
+    text-align: center;
+    z-index: 9;
+}
+
+.nazorg-box p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    position: relative;
+    z-index: 9;
+}
+
+.nazorg-box ul {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    position: relative;
+    z-index: 9;
+}
+
+.tab {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
 }
 
 /* CONTACT FORM PAGE */
@@ -1025,32 +1029,26 @@ header.is-fading::after {
     background-repeat: no-repeat;
     background-size: contain;
     content: "";
-    height: 360px;
+    height: 600px;
     opacity: 0.75;
     pointer-events: none;
     position: absolute;
+    top: 50%;
     width: 360px;
     z-index: 1;
 }
 
-/* DOWN RIGHT LEAF */
-/* .contact-form::before {
-    background-image: url("images/leaf-left.png");
-    height: 330px;
-    right: 20px;
-    bottom: -30px;
-    transform: scaleX(-1) rotate(145deg);
-    width: 390px;
-} */
+.contact-form::before {
+    background-image: url("images/Spijker\ BB.png");
+    left: -78px;
+    transform: translateY(-50%);
+}
 
-/* UPPER LEFT LEAF */
-/* .contact-form::after {
-    background-image: url("images/leaf-right.png");
-    left: -80px;
-    top: 25px;
-    transform: rotate(80deg);
-    width: 420px;
-} */
+.contact-form::after {
+    background-image: url("images/Spijker\ BB.png");
+    right: -78px;
+    transform: translateY(-50%);
+}
 
 .contact-form h2 {
     font-family: 'DeepShadow', sans-serif;
@@ -1067,7 +1065,9 @@ header.is-fading::after {
     box-sizing: border-box;
     max-width: 1100px;
     padding: 20px;
+    position: relative;
     width: 100%;
+    z-index: 2;
 }
 
 .contact-form .contact-layout form {
