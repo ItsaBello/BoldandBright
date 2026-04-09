@@ -148,7 +148,7 @@ body {
     color: white;
     font-family: 'Montserrat', Helvetica Neue, Helvetica, Arial, sans-serif;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden;
     padding: 0;
 }
 
@@ -377,7 +377,8 @@ header.is-fading::after {
 .our-team-box,
 .faq,
 .nazorg,
-.contact-form {
+.contact-form,
+.events {
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -387,7 +388,8 @@ header.is-fading::after {
 .our-team-box .our-team-tiles,
 .faq .faq-container,
 .nazorg .nazorg-box,
-.contact-form .contact-form-field {
+.contact-form .contact-form-field,
+.events .events-box {
     margin: 0 auto;
 }
 
@@ -508,10 +510,10 @@ header.is-fading::after {
 
 .contact .contact-title {
     font-family: 'BebasNeue', sans-serif;
-    font-size: 50px;
+    font-size: 55px;
     font-weight: 600;
     grid-column: 1 / -1;
-    letter-spacing: 8px;
+    letter-spacing: 5px;
     margin: 0 0 20px;
     padding: 12px 0 6px;
     text-align: center;
@@ -618,7 +620,7 @@ header.is-fading::after {
     z-index: 0;
 }
 
-.our-team-box .our-team-tiles::before,
+/* .our-team-box .our-team-tiles::before,
 .our-team-box .our-team-tiles::after {
     background-position: center;
     background-repeat: no-repeat;
@@ -630,44 +632,21 @@ header.is-fading::after {
     position: absolute;
     width: 320px;
     z-index: 1;
-}
-
-/* UPPER RIGHT LEAF */
-/* .our-team-box .our-team-tiles::before {
-    background-image: url("images/leaf-right.png");
-    height: 330px;
-    right: -300px;
-    top: 60px;
-    transform: rotate(65deg);
-    width: 600px;
-    z-index: 1;
-} */
-
-/* DOWN LEFT LEAF */
-/* .our-team-box .our-team-tiles::after {
-    background-image: url("images/leaf-left.png");
-    bottom: 800px;
-    height: 330px;
-    left: -230px;
-    top: 30px;
-    transform: rotate(-70deg);
-    width: 450px;
-    z-index: 1;
 } */
 
 .our-team-box .our-team-tiles {
     background-image: url(/images/mockbackground2.png);
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: 125%;
+    background-size: cover;
     border-radius: 14px;
-    box-shadow: 0 12px 30px rgba(38, 38, 38, 0.3);;
+    box-shadow: 0 12px 30px rgba(38, 38, 38, 0.3);
     display: grid;
     gap: 28px;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
-    /* margin-top: 25px; */
     max-width: 1200px;
     overflow: visible;
-    padding: 48px;
+    padding: 48px 48px 60px;
     position: relative;
     text-align: center;
     width: 100%;
@@ -744,6 +723,18 @@ header.is-fading::after {
     height: auto;
     margin: -18px auto 2px; 
     width: 120px;        
+}
+
+.team-member-row-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+}
+
+.team-member-row-bottom .team-member {
+    width: min(100%, 360px);
+    flex: 0 1 360px;
 }
 
 .team-member .tile-front h3 {
@@ -914,16 +905,6 @@ header.is-fading::after {
     line-height: 1.5; /* Increase line height for better readability */
     padding: 20px;
     text-align: left;
-}
-
-.faq-leaf {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.75;
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
 }
 
 /* NAZORG PAGE */
@@ -1103,6 +1084,88 @@ header.is-fading::after {
     justify-self: center;
 }
 
+/* EVENTS PAGE */
+
+/* EVENTS PAGE */
+.events {
+    align-items: center;
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    padding: 50px 24px;
+    position: relative;
+}
+
+.events-box {
+    background: rgba(255, 148, 203, 0.9);
+    border-radius: 14px;
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.35),
+        0 28px 60px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.08);
+    color: white;
+    max-width: 1100px;
+    padding: 50px 32px 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.events-box h1 {
+    font-family: 'BebasNeue', sans-serif;
+    font-size: 55px;
+    letter-spacing: 5px;
+    margin: 0 0 16px;
+    text-transform: uppercase;
+}
+
+.events-intro {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0 auto 28px;
+    max-width: 760px;
+}
+
+.events-cards {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    margin-top: 20px;
+}
+
+.events-card {
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(38, 38, 38, 0.18);
+    padding: 24px 18px;
+}
+
+.events-card h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+}
+
+.events-card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.events-note {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 28px 0 0;
+}
+
+
 /* FOOTER */
 
 footer {
@@ -1117,11 +1180,11 @@ footer p {
     margin: 0;
 }
 
-.page-contact footer {
-    background-color: rgba(186, 50, 244, 1);
-}
-
-.page-faq footer {
+.page-team footer,
+.page-faq footer,
+.page-nazorg footer,
+.page-contact footer,
+.page-events footer {
     background-color: rgba(186, 50, 244, 1);
 }
 
@@ -1156,7 +1219,8 @@ footer p {
     height: 46px;
 }
 
-.ig-link-footer .fb-link-footer {
+.ig-link-footer,
+.fb-link-footer {
     line-height: 0;
     text-decoration: none;
     vertical-align: middle;
@@ -1184,9 +1248,6 @@ footer p {
     }
 
     header {
-        background-size: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
         height: 400px;
     }
 
