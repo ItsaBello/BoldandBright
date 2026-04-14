@@ -45,7 +45,7 @@
         <div class="contact-form-field">
             <h2>Let's make it permanent!</h2>
             <div class="contact-layout">
-                <form action="../contact-form.php" method="POST">
+                <form action="../contact-form.php" method="POST" enctype="multipart/form-data">
 
                     <label for="fullname">Naam</label>
                     <input type="text" id="fullname" name="fullname" placeholder="Je naam" required>
@@ -61,6 +61,14 @@
                         <option value="Ik wil een prijsindicatie">Ik wil een prijsindicatie</option>
                         <option value="Iets anders">Iets anders</option>
                     </select>
+
+                    <label for="reference_images">Referentie foto's (optioneel)</label>
+                    <p class="upload-note">Je kunt maximaal 5 foto's uploaden. Maximaal 8 MB per foto. Alleen JPG, JPEG, PNG en WebP.</p>
+                    <div class="file-upload">
+                        <label for="reference_images" class="file-upload-button">Kies foto's</label>
+                        <span class="file-upload-text">Nog geen bestanden gekozen</span>
+                    </div>
+                    <input type="file" id="reference_images" name="reference_images[]" accept=".jpg,.jpeg,.png,.webp" multiple>
 
                     <label for="message">Zeg het maar</label>
                     <textarea id="message" name="message" placeholder="Schrijf iets.." style="height:200px" required></textarea>
