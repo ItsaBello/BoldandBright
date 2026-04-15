@@ -425,18 +425,45 @@ header.is-fading::after {
 }
 
 .studio-intro .intro-box::before {
-    background-image: url("images/Tijger BB.png");
+    background-image: url("images/Hart-los-BB.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     content: "";
-    height: 250px;
+    height: 450px;
     inset: 0;
     opacity: 0.2;
     pointer-events: none;
     position: absolute;
-    top: 30px;
+    top: -60px;
     z-index: 1;
+}
+
+.studio-intro::before, 
+.studio-intro::after {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 1200px;
+    opacity: 0.9;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 220px;
+    z-index: 1;
+}
+
+.studio-intro::before {
+    background-image: url("images/Tijger\ BB.png");
+    left: 70px;
+    transform: translateY(-50%);
+}
+
+.studio-intro::after {
+    background-image: url("images/Panter\ BB.png");
+    right: 70px;
+    transform: translateY(-50%);
 }
 
 .studio-intro h1 {
@@ -461,26 +488,25 @@ header.is-fading::after {
 /* IG FEATURE */
 .feature.IG {
     background-image: url(/images/mockbackground2.png);
-    background-size: 100%;
-    background-position: center calc(50% + 10px);
-    column-gap: 125px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 400px;
-    padding: 20px;
-    padding-bottom: 60px;
+    min-height: 620px;
+    padding: 10px 12px 10px;
     row-gap: 8px;
 }
 
 .feature.IG h2 {
     flex: 0 0 100%;
     font-family: 'DeepShadow', sans-serif;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 400;
     letter-spacing: 10px;
     margin: 0;
-    padding: 20px;
+    padding: 30px 0 0;
     text-align: center;
     text-shadow: 
         0 3px 0 rgba(0, 0, 0, 0.55),
@@ -489,17 +515,16 @@ header.is-fading::after {
     text-transform: uppercase;
 }
 
-.feature.IG figure {
-    background-color: rgba(255, 148, 203, 0.85);
-    border: 1px solid rgb(255, 186, 15, 0.28);
-    border-radius: 10px;
+.ig-widget-frame {
+    background: rgba(186, 50, 244, 0.42);
+    border: none;
+    border-radius: 18px;
     box-shadow: 0 8px 22px rgba(38, 38, 38, 0.2);
-    color: white;
-    margin: 0;
-    text-align: center;
-    text-transform: uppercase;
-    padding: 16px 14px 18px;
-    width: 200px;
+    display: block;
+    margin: 0 auto;
+    max-width: 1220px;
+    overflow: hidden;
+    width: 100%;
 }
 
 /* CONTACT */
@@ -522,7 +547,8 @@ header.is-fading::after {
 
 .contact .contact-grid {
     align-items: start;
-    background: rgba(186, 50, 244, 1);
+    background: rgba(255, 148, 203, 1);
+    /* background: rgba(186, 50, 244, 1); */
     border-radius: 14px;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -921,18 +947,28 @@ header.is-fading::after {
 
 .nazorg::before,
 .nazorg::after {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-position: top center;
+    background-repeat: repeat-y; 
+    background-size: 120px auto;
+    bottom: 0;
     content: "";
-    height: 700px;
     opacity: 0.9;
     pointer-events: none;
     position: absolute;
-    top: 50%;
+    top: 0;
     width: 280px;
     z-index: 1;
-}   
+}  
+
+.nazorg::before {
+    background-image: url("images/Bloeddruppel.png");
+    left: 40px;
+}
+
+.nazorg::after {
+    background-image: url("images/Bloeddruppel.png");
+    right: 40px;
+}
 
 .nazorg .nazorg-box {
     background: rgba(255, 148, 203, 0.9);
@@ -1042,7 +1078,7 @@ header.is-fading::after {
 .contact-form p {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 .contact-form .contact-form-field {
@@ -1134,6 +1170,44 @@ header.is-fading::after {
     margin: 8px 0 0;
 }
 
+.files-upload-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.file-upload-item {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    justify-content: space-between;
+    padding: 8px 14px;
+}
+
+.file-upload-name {
+    color: white;
+    font-family: 'Montserrat', sans-serif;;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.file-upload-remove {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1;
+    padding: 0;
+}
 
 /* EVENTS PAGE */
 

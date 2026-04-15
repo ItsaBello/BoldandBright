@@ -59,7 +59,7 @@ function slideHeader(step) {
 function startHeaderAutoplay() {
     if (!headerEl) return;
     if (autoplayId) clearInterval(autoplayId);
-    autoplayId - setInterval(() => slideHeader(1), 5000);
+    autoplayId = setInterval(() => slideHeader(1), 5000);
 }
 
 function stopHeaderAutoplay() {
@@ -106,4 +106,82 @@ faqQuestions.forEach(question => {
         }
     });
 });
+
+const fileInput = document.querySelector('#reference_images');
+const fileUploadText = document.querySelector('#file-upload-text');
+const fileUploadList = document.querySelector('#files-upload-list');
+
+function renderSelectedFiles() {
+    fileUploadList.innerHTML = '';
+
+    for (const [index, file] of Array.from(fileInput.files).entries()) {
+        const fileItem = document.createElement('div');
+        fileItem.classList.add('file-upload-item');
+
+        const fileName = document.createElement('span');
+        fileName.classList.add('file-upload-name');
+        fileName.textContent = file.name;
+
+        const removeButton = document.createElement('button');
+        removeButton.classList.add('file-upload-remove');
+        removeButton.type = 'button';
+        removeButton.textContent = '×';
+
+        removeButton.addEventListener('click', () => {
+            const dataTransfer = new DataTransfer();
+
+            Array.from(fileInput.files).forEach((currentFile, currentIndex) => {
+                if (currentIndex !== index) {
+                    dataTransfer.items.add(currentFile);
+                }
+            });
+
+            fileInput.files = dataTransfer.files;
+
+            if (fileInput.files.length === 0) {
+                fileUploadText.textContent = 'Nog geen bestand gekozen';
+            } else if (fileInput.files.length === 1) {
+                fileUploadText.textContent = '1 bestand gekozen';
+            } else {
+                fileUploadText.textContent = `${fileInput.files.length} bestanden gekozen`;
+            }
+
+            renderSelectedFiles();
+        });
+
+        fileItem.appendChild(fileName);
+        fileItem.appendChild(removeButton);
+
+        fileUploadList.appendChild(fileItem);
+    }
+}
+
+if (fileInput && fileUploadText && fileUploadList) {
+    fileInput.addEventListener('change', () => {
+        const fileCount = fileInput.files.length;
+        const maxFiles = 5;
+
+        fileUploadList.innerHTML = '';
+
+        if (fileCount === 0) {
+            fileUploadText.textContent = 'Nog geen bestanden gekozen';
+            return;
+        }
+
+        if (fileCount > maxFiles) {
+            fileUploadText.textContent = `Je kunt maximaal ${maxFiles} bestanden kiezen`;
+            fileInput.value = '';
+            return;
+        }
+
+        if (fileCount === 1) {
+            fileUploadText.textContent = '1 bestand gekozen';
+        } else {
+            fileUploadText.textContent = `${fileCount} bestanden gekozen`;
+        }
+
+        renderSelectedFiles();
+    });
+
+}
 

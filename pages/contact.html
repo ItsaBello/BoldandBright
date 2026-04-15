@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOLD & BRIGHT TATTOO</title>
+    <link rel="icon" type="image/png" href="../images/Logo-znd-tekst.png">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://use.typekit.net/imp8vok.css">
 </head>
@@ -66,9 +67,11 @@
                     <p class="upload-note">Je kunt maximaal 5 foto's uploaden. Maximaal 8 MB per foto. Alleen JPG, JPEG, PNG en WebP.</p>
                     <div class="file-upload">
                         <label for="reference_images" class="file-upload-button">Kies foto's</label>
-                        <span class="file-upload-text">Nog geen bestanden gekozen</span>
+                        <span id="file-upload-text" class="file-upload-text">Nog geen bestand gekozen</span>
                     </div>
                     <input type="file" id="reference_images" name="reference_images[]" accept=".jpg,.jpeg,.png,.webp" multiple>
+
+                    <div id="files-upload-list" class="files-upload-list"></div>
 
                     <label for="message">Zeg het maar</label>
                     <textarea id="message" name="message" placeholder="Schrijf iets.." style="height:200px" required></textarea>
