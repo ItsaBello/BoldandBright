@@ -1,5 +1,13 @@
 <?php
 
+$config = require __DIR__ . '/config.local.php';
+
+if (!file_exists($configPath)) {
+    die('config.local.php ontbreekt.');
+}
+
+$config = require $configPath;
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit('Ongeldige aanvraag.');
 }
@@ -32,12 +40,12 @@ try {
     $mail = new PHPMailer(true);
 
     $mail->isSMTP();
-    $mail->Host = 'mail.boldandbrighttattoos.nl';
+    $mail->Host = $config['smtp_host'];
     $mail->SMTPAuth = true;
-    $mail->Username = 'info@boldandbrighttattoos.nl';
-    $mail->Password = '';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
+    $mail->Username = $config['smtp_username'];
+    $mail->Password = $config['smtp_password'];
+    $mail->SMTPSecure = $config['smtp_secure'];
+    $mail->Port = $config['smtp_port'];
 
     $mail->CharSet = 'UTF-8';
     $mail->setFrom($from, 'Bold & Bright Tattoo');
