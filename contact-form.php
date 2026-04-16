@@ -101,10 +101,12 @@ try {
 
     $mail->send();
 
-    echo 'Thanks! Je bericht is verzonden. Ink incoming!';
+    header('Location: pages/contact.html?status=success#contact-form');
+    exit;
 } catch (Exception $e) {
-    http_response_code(500);
-    echo 'Er ging iets mis bij het verzenden van je bericht.';
+    header('Location: pages/contact.html?status=error#contact-form');
+    exit;
+
 }
 
 ?>

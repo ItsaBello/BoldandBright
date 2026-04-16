@@ -947,9 +947,9 @@ header.is-fading::after {
 
 .nazorg::before,
 .nazorg::after {
-    background-position: top center;
-    background-repeat: repeat-y; 
-    background-size: 120px auto;
+    background-position: center 100px;
+    background-repeat: no-repeat;
+    background-size: 200px auto;
     bottom: 0;
     content: "";
     opacity: 0.9;
@@ -961,12 +961,12 @@ header.is-fading::after {
 }  
 
 .nazorg::before {
-    background-image: url("images/Bloeddruppel.png");
+    background-image: url("images/Bloeddruppels.png");
     left: 40px;
 }
 
 .nazorg::after {
-    background-image: url("images/Bloeddruppel.png");
+    background-image: url("images/Bloeddruppels.png");
     right: 40px;
 }
 
@@ -1207,6 +1207,56 @@ header.is-fading::after {
     font-weight: 500;
     line-height: 1;
     padding: 0;
+}
+
+.form-status {
+    align-items: center;
+    background: rgba(20, 20, 20, 0.55);
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    padding: 24px;
+    position: fixed;
+    z-index: 1000;
+}
+
+.form-status[hidden] {
+    display: none;
+}
+
+
+.form-status-card {
+    background: rgba(255, 148, 203, 1);
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(38, 38, 38, 0.3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 460px;
+    padding: 20px;
+}
+
+.contact-form .form-status-message {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
+.form-status-close {
+    background: rgba(255, 148, 203, 1);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 20px;
+    z-index: 1001;
 }
 
 /* EVENTS PAGE */

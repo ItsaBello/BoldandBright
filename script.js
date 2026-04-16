@@ -182,6 +182,39 @@ if (fileInput && fileUploadText && fileUploadList) {
 
         renderSelectedFiles();
     });
-
 }
 
+const formStatus = document.querySelector('#form-status');
+
+const formStatusMessage = document.querySelector('#form-status-message');
+const formStatusClose = document.querySelector('#form-status-close');
+const formStatusCard = document.querySelector('.form-status-card');
+
+const params = new URLSearchParams(window.location.search);
+const status = params.get('status');
+
+if (formStatus && formStatusMessage && formStatusClose && status) {
+    function closeFormStatus() {
+        formStatus.hidden = true;
+
+        if (window.history.replaceState) {
+            window.history.replaceState({}, document.title, `${window.location.pathname}${window.location.hash}`);
+        }
+    }
+
+    formStatusClose.addEventListener('click', closeFormStatus);
+    
+    formStatus.addEventListener('click', (event) => {
+        if (event.target === formStatus) {
+            closeFormStatus();
+        }
+    });
+
+    if (status === 'success') {
+        formStatusMessage.textContent = 'Thanks! Je bericht is verzonden. Ink incoming!';
+        formStatus.hidden = false;
+    } else if (status === 'error') {
+        formStatusMessage.textContent = 'Er ging iets mis bij het verzenden van je bericht.';
+        formStatus.hidden = false;
+    }
+}
