@@ -1,16 +1,16 @@
 <?php
 
-$config = require __DIR__ . '/config.local.php';
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    exit('Ongeldige aanvraag.');
+}
+
+$configPath = __DIR__ . '/config.local.php';
 
 if (!file_exists($configPath)) {
     die('config.local.php ontbreekt.');
 }
 
 $config = require $configPath;
-
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    exit('Ongeldige aanvraag.');
-}
 
 require __DIR__ . '/vendor/phpmailer/phpmailer/src/Exception.php';
 require __DIR__ . '/vendor/phpmailer/phpmailer/src/PHPMailer.php';
