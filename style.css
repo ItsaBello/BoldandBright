@@ -751,7 +751,7 @@ header.is-fading::after {
     width: 120px;        
 }
 
-.team-member-row-bottom {
+/* .team-member-row-bottom {
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
@@ -761,7 +761,12 @@ header.is-fading::after {
 .team-member-row-bottom .team-member {
     width: min(100%, 360px);
     flex: 0 1 360px;
+} */
+
+.team-member .tile-front .ig-button-front {
+    display: none;
 }
+
 
 .team-member .tile-front h3 {
     margin: 0 0 4px;
@@ -1587,6 +1592,75 @@ footer p {
         width: 100%;
     }
 
+    .our-team-box {
+        padding: 32px 24px;
+    }
+
+    .our-team-box .our-team-tiles {
+        gap: 22px;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+        padding: 28px 24px 32px;
+    }
+
+    .our-team-box .our-team-tiles h2 {
+        font-size: 30px;
+        margin: 0 0 6px;
+    }
+
+    .team-member,
+    .our-team-box .our-team-tiles .team-member,
+    .team-member .tile-inner {
+        height: 340px;
+    }
+
+    .team-member:hover .tile-inner {
+        transform: none;
+    }
+
+    .team-member .tile-back {
+        display: none;
+    }
+
+    .team-member .tile-front {
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: 12px 18px 24px;
+    }
+
+    .our-team-box .our-team-tiles .team-member .member-badge {
+        margin: -10px auto 0;
+        width: 95px;
+    }
+
+    .team-member .tile-front h3 {
+        font-size: 24px;
+        margin: 6px 0 4px;
+    }
+
+    .team-member .tile-front p {
+        font-size: 14px;
+        line-height: 1.45;
+        margin: 0;
+        min-height: 4.5em;
+    }
+
+    .team-member .tile-front .ig-button-front {
+        align-self: center;
+        display: block;
+        margin-top: auto;
+        margin-bottom: 0;
+        padding: 10px 16px 8px;
+        width: 180px;
+    }
+
+    .team-member .tile-front .ig-button-front img {
+        display: block;
+        height: auto;
+        pointer-events: none;
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -1746,6 +1820,76 @@ footer p {
         padding: 12px 0;
         width: 100%;
     }
+
+    .our-team-box {
+        padding: 28px 0;
+    }
+
+    .our-team-box .our-team-tiles {
+        border-radius: 0;
+        gap: 18px;
+        grid-template-columns: 1fr;
+        padding: 20px 16px 24px;
+    }
+
+    .our-team-box .our-team-tiles h2 {
+        font-size: 28px;
+        margin: 0 0 6px;
+    }
+
+    .team-member,
+    .our-team-box .our-team-tiles .team-member,
+    .team-member .tile-inner {
+        height: 320px;
+    }
+
+    .team-member:hover .tile-inner {
+        transform: none;
+    }
+
+    .team-member .tile-back {
+        display: none;
+    }
+
+    .team-member .tile-front {
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        padding: 12px 16px 20px;
+    }
+
+    .our-team-box .our-team-tiles .team-member .member-badge {
+        margin: -8px auto 0;
+        width: 92px;
+    }
+
+    .team-member .tile-front h3 {
+        font-size: 24px;
+        margin: 6px 0 4px;
+    }
+
+    .team-member .tile-front p {
+        font-size: 15px;
+        line-height: 1.45;
+        margin: 0;
+        min-height: 4.8em;
+    }
+
+    .team-member .tile-front .ig-button-front {
+        align-self: center;
+        display: block;
+        margin-top: auto;
+        margin-bottom: 0;
+        padding: 10px 16px 8px;
+        width: 180px;
+    }
+
+    .team-member .tile-front .ig-button-front img {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1872,5 +2016,72 @@ footer p {
         height: 240px;
         padding: 8px 0;
     }
+
+    .our-team-box {
+        padding: 24px 0;
+    }
+
+    .our-team-box .our-team-tiles {
+        gap: 16px;
+        padding: 18px 12px 20px;
+    }
+
+    .our-team-box .our-team-tiles h2 {
+        font-size: 24px;
+    }
+
+    .team-member,
+    .our-team-box .our-team-tiles .team-member,
+    .team-member .tile-inner {
+        height: 300px;
+    }
+
+    .team-member:hover .tile-inner {
+        transform: none;
+    }
+
+    .team-member .tile-back {
+        display: none;
+    }
+
+    .team-member .tile-front {
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 14px 18px;
+    }
+
+    .our-team-box .our-team-tiles .team-member .member-badge {
+        margin: -6px auto 0;
+        width: 84px;
+    }
+
+    .team-member .tile-front h3 {
+        font-size: 22px;
+        margin: 6px 0 4px;
+    }
+
+    .team-member .tile-front p {
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        min-height: 4.6em;
+    }
+
+    .team-member .tile-front .ig-button-front {
+        align-self: center;
+        display: block;
+        margin-top: auto;
+        margin-bottom: 0;
+        padding: 10px 14px 8px;
+        width: 165px;
+    }
+
+    .team-member .tile-front .ig-button-front img {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+
 
 }
