@@ -897,8 +897,10 @@ header.is-fading::after {
     width: 100%;
 }
 
-.faq-question:hover {
-    background-color: #d0d7de; 
+@media (hover: hover) {
+    .faq-question:hover {
+        background-color: #d0d7de;
+    }
 }
 
 .faq-question .arrow {
@@ -1661,6 +1663,41 @@ footer p {
         width: 100%;
     }
 
+    .faq {
+        padding: 32px 24px;
+    }
+
+    .faq::before,
+    .faq::after {
+        display: none;
+    }
+
+    .faq .faq-container {
+        max-width: 840px;
+        padding: 28px 24px 28px;
+    }
+
+    .faq-container h1 {
+        font-size: 48px;
+        letter-spacing: 4px;
+        margin: 0 0 22px;
+    }
+
+    .faq-item {
+        margin: 0 0 12px;
+    }
+
+    .faq-question {
+        color: black;
+        font-size: 15px;
+        padding: 18px 20px;
+    }
+
+    .faq-answer p {
+        font-size: 15px;
+        line-height: 1.5;
+        padding: 18px 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1890,6 +1927,39 @@ footer p {
         width: 100%;
     }
 
+    .faq {
+        padding: 28px 0;
+    }
+
+    .faq::before,
+    .faq::after {
+        display: none;
+    }
+
+    .faq .faq-container {
+        border-radius: 0;
+        max-width: 100%;
+        padding: 18px 16px 20px;
+    }
+
+    .faq-container h1 {
+        font-size: 34px;
+        letter-spacing: 3px;
+        margin: 0 0 14px;
+    }
+
+    .faq-question {
+        color: black;
+    }
+
+    .faq-question:focus,
+    .faq-question:focus-visible,
+    .faq-question:active,
+    .faq-question.active {
+        color: rgba(0, 0, 0, 0.8);
+        outline: none;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -2083,5 +2153,41 @@ footer p {
         width: 100%;
     }
 
+    .faq {
+        padding: 24px 0;
+    }
 
+    .faq .faq-container {
+        border-radius: 0;
+        max-width: 100%;
+        padding: 16px 12px 18px;
+    }
+
+    .faq-container h1 {
+        font-size: 28px;
+        letter-spacing: 2px;
+        margin: 0 0 12px;
+    }
+
+    .faq-item {
+        margin: 0 0 10px;
+    }
+
+    .faq-question {
+        border-radius: 18px;
+        font-size: 14px;
+        gap: 10px;
+        padding: 16px 18px;
+    }
+
+    .faq-answer {
+        border-radius: 18px;
+        margin-top: 6px;
+    }
+
+    .faq-answer p {
+        font-size: 14px;
+        line-height: 1.45;
+        padding: 16px 18px;
+    }
 }
