@@ -1698,6 +1698,48 @@ footer p {
         line-height: 1.5;
         padding: 18px 20px;
     }
+
+    .nazorg {
+        padding: 32px 24px;
+    }
+
+    .nazorg::before,
+    .nazorg::after {
+        display: none;
+    }
+
+    .nazorg .nazorg-box {
+        max-width: 820px;
+        padding: 28px 28px 28px;
+    }
+
+    .nazorg .nazorg-box::before {
+        background-position: center 40px;
+        background-size: 105% auto;
+        height: 1300px;
+        opacity: 0.24;
+        top: -140px;
+    }
+
+    .nazorg-box h1 {
+        font-size: 46px;
+        letter-spacing: 4px;
+        margin: 14px 0 14px;
+    }
+
+    .nazorg-box p {
+        font-size: 17px;
+        line-height: 1.55;
+        margin: 0 0 12px;
+    }
+
+    .nazorg-box ul {
+        font-size: 15px;
+        line-height: 1.55;
+        margin: 0 0 14px;
+        padding-left: 22px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -1960,6 +2002,40 @@ footer p {
         outline: none;
     }
 
+    .nazorg {
+        padding: 28px 0;
+    }
+
+    .nazorg::before,
+    .nazorg::after {
+        display: none;
+    }
+
+    .nazorg .nazorg-box {
+        border-radius: 0;
+        max-width: 100%;
+        padding: 24px 18px 24px;
+    }
+
+    .nazorg .nazorg-box::before {
+        background-position: center 60px;
+        background-size: 125% auto;
+        height: 1200px;
+        opacity: 0.22;
+        top: 150px;
+    }
+
+    .nazorg-box h1 {
+        font-size: 38px;
+        letter-spacing: 3px;
+        margin: 0 0 12px;
+    }
+
+    .nazorg-box p {
+        font-size: 16px;
+        line-height: 1.55;
+        margin: 0 0 12px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2190,4 +2266,48 @@ footer p {
         line-height: 1.45;
         padding: 16px 18px;
     }
+
+    .nazorg {
+        padding: 24px 0;
+    }
+
+    .nazorg::before,
+    .nazorg::after {
+        display: none;
+    }
+
+    .nazorg .nazorg-box {
+        border-radius: 0;
+        max-width: 100%;
+        padding: 20px 14px 20px;
+    }
+
+    .nazorg .nazorg-box::before {
+        background-position: center 50px;
+        background-size: 120% auto;
+        height: 1100px;
+        opacity: 0.2;
+        top: 120px;
+    }
+
+    .nazorg-box h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+        margin: 0 0 20px;
+    }
+
+    .nazorg-box p {
+        font-size: 15px;
+        line-height: 1.5;
+        margin: 0 0 10px;
+    }
+
+    .nazorg-box ul {
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 0 12px;
+        padding-left: 18px;
+    }
+
 }
+
