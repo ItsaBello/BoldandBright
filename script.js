@@ -1,3 +1,4 @@
+/* BURGERMENU */
 const burgerButton = document.querySelector('.burgermenu-icon');
 const menu = document.querySelector('.burgermenu');
 
@@ -11,6 +12,7 @@ if (burgerButton && menu) {
     });
 }
 
+/* BACK TO TOP BUTTON */
 const backToTop = document.querySelector('.back-to-top');
 const footer = document.querySelector('footer');
 
@@ -22,6 +24,7 @@ if (backToTop && footer) {
   observer.observe(footer);
 }
 
+/* HEADER PHOTO SLIDER */
 const headerEl = document.querySelector("header");
 const prevBtn = document.querySelector(".arrow-left");
 const nextBtn = document.querySelector(".arrow-right");
@@ -83,6 +86,7 @@ headerEl?.addEventListener("mouseleave", startHeaderAutoplay);
 
 startHeaderAutoplay();
 
+/* FAQ QUESTIONS */
 const faqQuestions = document.querySelectorAll('.faq-question');
 
 faqQuestions.forEach(question => {
@@ -107,6 +111,7 @@ faqQuestions.forEach(question => {
     });
 });
 
+/* FILE UPLOAD & REMOVE CONTACT PAGE */
 const fileInput = document.querySelector('#reference_images');
 const fileUploadText = document.querySelector('#file-upload-text');
 const fileUploadList = document.querySelector('#files-upload-list');
@@ -184,6 +189,7 @@ if (fileInput && fileUploadText && fileUploadList) {
     });
 }
 
+/* SUCCESS/FAILURE MESSAGES CONTACT PAGE */
 const formStatus = document.querySelector('#form-status');
 
 const formStatusMessage = document.querySelector('#form-status-message');
